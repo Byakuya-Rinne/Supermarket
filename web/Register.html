@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账号注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            font-size: 12px;
+            font-family: "宋体";
+        }
+
+        body, form, input, p {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+
+        form {
+            width: 380px;
+            height: 180px;
+            padding-top: 20px;
+            margin: 50px auto;
+            background: #f5f6fd;
+            border-radius: 20px;
+            border: 3px solid #4faccd;
+        }
+
+        p {
+            margin-top: 17px;
+            text-align: center;
+        }
+
+        p span {
+            width: 40px;
+            display: inline-block;
+            text-align: right;
+        }
+
+        .num, .pass {
+            width: 183px;
+            height: 16px;
+            border: 2px solid #35a1df;
+            /* 22px:给图标留出位置 */
+            padding: 2px 2px 2px 22px;
+        }
+
+        .num {
+            background-size: 15px;
+            color: #999;
+        }
+
+        .pass {
+            background-size: 15px;
+        }
+
+        .btn01, .btn02 {
+            width: 60px;
+            height: 26px;
+            border-radius: 3px;
+            border: 2px solid #6b5b60;
+            margin-left: 30px;
+        }
+
+        .btn01 {
+            background: #3bb7ea;
+        }
+
+        .btn02 {
+            background: #fbbc18;
+        }
+
+    </style>
+    <script>
+        // 当页面开始加载时候执行
+        window.onload = function () {
+            //获取图片对象
+            var img = document.getElementById("vcode");
+            //点击时候会触发事件
+            img.onclick = function () {
+                var date = new Date().getTime();
+                img.src = "/Supermarket/verifycode?ts=" + date;
+            }
+        }
+    </script>
+</head>
+<body>
+<!--<form action="/filterDemo01" method="post">-->
+<form action="/Supermarket/register" method="post">
+    <p>
+        <span>账号：</span>
+        <input type="text" name="username" value="" class="num"/>
+    </p>
+    <p>
+        <span>密码：</span>
+        <input type="text" name="password" class="pass"/>
+
+    </p>
+    <p>
+        <span>验证：</span>
+        <input type="text" name="verifycode" class="pass" style="width: 100px" />
+        <img style="width: 78px;" src="/Supermarket/verifycode" title="看不清点击刷新" id="vcode"/>
+    </p>
+    <p>
+        <input type="submit" class="btn02" value="注册"/>
+    </p>
+</form>
+
+
+
+
+</body>
+</html>
