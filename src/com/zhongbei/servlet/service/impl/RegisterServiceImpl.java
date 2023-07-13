@@ -27,13 +27,10 @@ public class RegisterServiceImpl implements IRegisterService {
                 return false;
             }else {
                 // 保存用户数据
+                //萨达撒多硕大的撒三大撒多撒多萨达阿萨德撒撒
                 boolean result = dao.saveUser(user);
                 return result;
             }
-
-
-
-
 
         }
 
